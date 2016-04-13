@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>common/creationDate</key>
+	<string>2015-10-09T17:11:30-0700</string>
+	<key>common/location</key>
+	<string>+039.3365-084.9981/</string>
+	<key>common/description</key>
+	<string>This is my description</string>
+	<key>common/title</key>
+	<string>This is my Title</string>
+	<key>common/make</key>
+	<string>Apple</string>
+	<key>common/model</key>
+	<string>iPhone 6</string>
+	<key>common/software</key>
+	<string>8.1.2</string>
+</dict>
+</plist>

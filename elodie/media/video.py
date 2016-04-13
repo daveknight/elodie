@@ -119,30 +119,6 @@ class Video(Media):
 
         return time.gmtime(seconds_since_epoch)
 
-    def get_duration(self):
-        """Get the duration of a video in seconds.
-
-        This uses ffmpeg/ffprobe.
-
-        :returns: str or None for a non-video file
-        """
-        if(not self.is_valid()):
-            return None
-
-        source = self.source
-        result = subprocess.Popen(
-            ['ffprobe', source],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT
-        )
-        for key in result.stdout.readlines():
-            if 'Duration' in key:
-                return re.search(
-                    '(\d{2}:\d{2}.\d{2})',
-                    key
-                ).group(1).replace('.', ':')
-        return None
-
     def get_exif(self):
         """Get exif data from video file.
 
@@ -401,14 +377,3 @@ class Video(Media):
             os.utime(source, (stat.st_atime, stat.st_mtime))
 
             return True
-
-
-class Transcode(object):
-
-    """Constructor takes a video object as its parameter.
-
-    :param Video video: Video object.
-    """
-
-    def __init__(self, video=None):
-        self.video = video
